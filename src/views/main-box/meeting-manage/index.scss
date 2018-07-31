@@ -1,0 +1,16 @@
+.meeting-manage {
+  .el-dialog {
+    margin-bottom: 0;
+  }
+
+  .pass-tip {
+    position: absolute;
+    top: 13px;
+    line-height: 1;
+    width: 180px;
+    right: -190px;
+  }
+  .errorTip .el-form-item__error {
+    width:220px;
+  }
+}

@@ -1,0 +1,68 @@
+.change-password {
+
+  .header-title {
+    margin-bottom: 22px;
+  }
+
+  .btn-save {
+    margin: 20px 0 0 20px;
+  }
+
+  // 装载着form表单的白色容器
+  .form-box {
+    padding: 22px 0 0 20px;
+    border-radius: 5px;
+    background: white;
+
+    // 重新定位error 信息
+    .el-form-item__error {
+      top: 17%;
+      left: 33%;
+      padding-top: 0;
+      font-weight: bold;
+    }
+
+    .el-form-item.is-error .el-input__inner {
+      border-color: #bfcbd9;
+    }
+    .el-form-item.is-error .el-input__inner:focus {
+      border-color: #20a0ff;
+    }
+  }
+
+  .el-form-item {
+    // 取消form -item margin-bottom
+    margin-bottom: 0;
+  }
+  // form 表单中的每一行
+  .form-row {
+    position: relative;  // 给error 信息提供左边
+    line-height: 30px;
+    margin-bottom: 20px;
+
+    // 针对 新密码 限制性文字
+    .warn-tilte {
+      font-size: 12px;
+      color: #6e7a82;
+    }
+
+    // 原密码错误
+    .old-pass-error {
+      font-size: 12px;
+      color: red;
+      font-weight: bold;
+    }
+
+    // 该行中的label.
+    &-label {
+      font-weight: bold;
+    }
+
+    // 实际的input
+    .el-input__inner {
+      height: 30px;
+      background: rgb(245, 248,249);
+    }
+
+  }
+}

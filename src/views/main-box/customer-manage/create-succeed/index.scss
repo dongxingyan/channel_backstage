@@ -1,0 +1,40 @@
+.create-succeed {
+  // 客户基本信息title
+  .base-info-title {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 22px 0 10px 0;
+  }
+
+  // 测试会议室title
+  .test-meet-title {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 30px 0 10px 0;
+  }
+
+  // 当前页面中的两个按钮布局
+  .cur-btn-group {
+    margin: 15px 0 0 25px;
+  }
+
+  // info: 具体信息所放容器
+  .info {
+    padding: 5px 30px 0 30px;
+    font-size: 12px;
+    background: white;
+
+    // 盒子中的每一行
+    &-row {
+      box-sizing: border-box;
+      border-bottom: 1px solid rgb(238, 238, 240);
+      line-height: 60px;
+
+      .label-span {
+        //width: 100px;
+        display: inline-block;
+        text-align: right;
+      }
+    }
+  }
+}

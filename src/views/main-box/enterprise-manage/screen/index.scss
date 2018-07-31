@@ -1,0 +1,30 @@
+.first-screen {
+  @import "../enterprise";
+
+  .auto-container {
+    position: relative;
+    font-size: 0;
+    height: 23px;
+
+    .abs-ellipsis {
+      position: absolute;
+      font-size: 14px;
+      font-weight: bold;
+      right: 0;
+      top: 0;
+    }
+
+    .auto-span {
+      display: inline-block;
+      width: 130px;
+      font-size: 14px;
+      margin-left: 30px;
+      white-space: nowrap;
+      overflow: hidden;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+}

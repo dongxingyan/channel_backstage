@@ -1,0 +1,151 @@
+.statistics-use {
+  .header {
+    /* padding: 10px;
+    border-radius: 5px;
+    background: white; */
+  }
+
+  // 国产浏览器左侧有一列内容，占了额外宽度
+  .el-date-editor.el-input,
+  .el-date-editor.el-input__inner {
+    width: 200px;
+  }
+
+  .use {
+    &-date-picker {
+      display: inline-block;
+    }
+
+    &-search {
+      display: inline-block;
+    }
+
+    &-export {
+      margin-left: 20px;
+    }
+  }
+
+  .statistics-search {
+    display: inline-block;
+    width: 200px;
+    .el-input__inner {
+      padding: 0 6px;
+    }
+  }
+
+  .meeting-times {
+    // 会议时长图标 去掉竖线
+    height: 590px;
+    margin-top: 40px;
+    padding: 10px 0;
+    background: white;
+
+    &-echart {
+      height: 400px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .flex-container {
+    display: flex;
+    margin: 0 20px;
+    overflow-x: auto;
+
+    .inner {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex-grow: 1;
+
+      .item1,
+      .item2,
+      .item3 {
+        line-height: 3;
+        text-align: center;
+        min-width: 100px;
+        flex-grow: 1;
+      }
+
+      .item1 {
+        background: #f5f6f5;
+      }
+
+      .item2 {
+        background: #e8f5ff;
+      }
+
+      .item3 {
+        background: #fff7e5;
+      }
+    }
+  }
+
+  .no-data-container {
+    margin-top: 40px;
+    background: white;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .echart-box {
+    height: 400px;
+    margin-top: 40px;
+    background: white;
+    padding: 10px 0;
+
+    &-content {
+      position: relative;
+      height: 100%;
+
+      &::after {
+        content: "";
+        position: absolute;
+        right: 5px;
+        top: 0;
+        width: 1px;
+        background: #c0c0c0;
+        height: 90%;
+      }
+    }
+
+    &-table {
+      position: relative;
+      min-height: 90%;
+      max-height: 100%;
+      padding-left: 10px;
+      overflow-y: hidden;
+      overflow-x: hidden;
+
+      .el-col {
+        // 里面的span
+        line-height: 2;
+      }
+
+      &-th {
+        // ul 表头
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        font-weight: bold;
+      }
+
+      &-tbody {
+        // ul 表体
+        position: absolute;
+        top: 30px;
+        left: 0;
+        right: -20px;
+        height: 336px;
+        overflow-y: scroll;
+
+        &-count {
+          // 次数一列
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}

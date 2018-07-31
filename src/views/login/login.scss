@@ -1,0 +1,142 @@
+.login {
+  height: 100%;
+  width: 100%;
+  background: url("../../assets/image/login-back.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+
+  .container {
+    position: absolute;
+    left: 50%;
+    bottom: 18%;
+    transform: translateX(-50%);
+    width: 380px;
+  }
+
+  .logo-box {
+    padding: 32px 0;
+    text-align: center;
+  }
+
+  .login-form {
+    position: relative;
+    width: 380px;
+    height: 400px;
+    border-radius: 5px;
+    background: white;
+    // 错误提示信息定位
+    .el-form-item__error {
+      left: 14px;
+    }
+
+    &-header {
+      display: inline-block;
+      font-size: 20px;
+      font-weight: bold;
+      color: #4c9bf6;
+      margin-top: 36px;
+      margin-left: 46px;
+      margin-bottom: 42px;
+    }
+
+    .btn-container {
+      text-align: center;
+
+      .login-btn {
+        width: 208px;
+        height: 40px;
+        margin-top: 25px;
+        font-size: 14px;
+        border-radius: 20px;
+      }
+    }
+
+    &-input {
+      // input 框容器
+      width: 276px;
+      height: 40px;
+      margin-left: 52px;
+      margin-bottom: 24px;
+      border-radius: 19px;
+      box-sizing: border-box;
+      border: 1px solid rgb(238,238,238);
+      transition: border-color 0.2s cubic-bezier(.645,.045,.355,1);
+
+      &:focus {
+        // border: 1px solid;
+      }
+
+      .el-input {
+        position: absolute;
+        // font-size: 12px;
+        // line-height: 1;
+        &__inner {
+          padding-left: 0;
+        }
+      }
+
+      .input-img {
+        position: relative;
+        top: 4px;
+        width: 16px;
+        height: 18px;
+        margin-left: 15px;
+        margin-right: 8px;
+      }
+
+      & input {
+        // 实际的input框
+        box-sizing: border-box;
+        height: 33px;
+        width: 200px;
+        border: none;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      &.check-code-input {
+        // 验证码input容器
+        display: inline-block;
+        width: 168px;
+
+        & input {
+          width: 100px;
+        }
+
+        .check-img {
+          position: absolute;
+          // right: 52px;
+          left: 179px;
+          width: 96px;
+          height: 36px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .code-img {
+    height: 20px;
+    width: 60px;
+    border: 1px solid;
+    cursor: pointer;
+  }
+
+  .error-tip {
+    color: #ff0000;
+    font-size: 12px;
+    line-height: 20px;
+    height: 20px;
+  }
+
+  // 输入框高亮，配合 classList.toggle
+  .focus-color {
+    border-color: #409eff;
+  }
+
+  .check-code-input .el-form-item__error {
+    width:220px;
+  }
+}

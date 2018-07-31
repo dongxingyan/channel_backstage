@@ -1,0 +1,268 @@
+/* 针对 admin 和 meet*/
+
+.admin-header {
+  margin-bottom: 22px;
+}
+
+.el-loading-mask {
+  z-index: 90;
+}
+/* pc, android, ios*/
+
+.custom-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.title-tip {
+  margin-top: 3px;
+  margin-left: 11px;
+  color: #7b8292;
+
+  &-new {
+    // new-tip
+    position: relative;
+    left: -22px;
+  }
+
+  img {
+    position: relative;
+    top: 1px;
+  }
+}
+
+.package-info {
+  height: 48px;
+  padding: 15px 30px;
+  margin-bottom: 12px;
+  font-weight: bold;
+  font-size: 12px;
+  background: white;
+
+  img {
+    // apple img 影响行高，暂时不好处理
+    // position: relative;
+  }
+
+  &-a {
+    // 下载超链接
+    position: relative;
+    top: -3px;
+    margin: 0 22px;
+    font-weight: normal;
+    text-decoration: none;
+    line-height: 20px;
+  }
+}
+
+.app-made {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+// form style
+
+.form-custom {
+  background: white;
+  padding: 0 30px;
+  font-size: 12px;
+}
+
+.row-box {
+  position: relative;
+  border-bottom: 1px solid rgb(216, 222, 215);
+  box-sizing: border-box;
+}
+
+.col-box {
+  position: absolute;
+  height: 100%;
+  width: 20%;
+  box-sizing: border-box;
+  // border: 1px solid;
+  &-label {}
+
+  &-input {
+    left: 20%;
+  }
+
+  &-text {
+    left: 20%;
+    width: 50%;
+  }
+
+  &-bundle {
+    left: 20%;
+  }
+
+  &-tips {
+    left: 50%;
+    width: 50%;
+  }
+}
+
+.item-content {
+  // 实际的每一项内容，垂直居中
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  // 内容样式
+  &-label {
+    font-weight: bold;
+    color: #464545;
+  }
+
+  &-input {
+    img {
+      border: 1px solid rgb(216, 222, 215);
+      box-sizing: border-box;
+    }
+
+    .el-input__inner {
+      background-color: rgb(245, 248, 249);
+    }
+  }
+
+  &-text {
+    color: #7b8292;
+  }
+
+  &-tips {
+    color: #7b8292;
+  }
+}
+
+.btn-up-img {
+  // 上传图片 btn
+  margin-top: 10px;
+  padding: 7px 15px;
+  border-radius: 18px;
+  border-color: #3a92f1;
+  color: #3a92f1;
+  background-color: white;
+}
+/* loading text 位置调整 */
+
+.el-loading-spinner .el-loading-text {
+  position: absolute;
+  left: 53%;
+  top: 10px;
+}
+/* 隐藏上传图片输入框*/
+
+input[type='file'] {
+  position: absolute;
+  display: none;
+  z-index: -1;
+}
+/* 定制化保存按钮网游偏移*/
+
+.btn-save {
+  margin-left: 30px;
+}
+// 使用flex 重新布局
+
+.form-custom {
+  > .el-row {
+    border-bottom: 1px solid #d8ded7;
+  }
+
+  > .el-row > .el-col {
+    height: inherit;
+    display: flex;
+    align-items: center;
+
+    &:first-child {
+      font-weight: bold;
+      color: #464545;
+    }
+
+    &:nth-child(2) {
+      .el-input__inner {
+        background-color: #f5f8f9;
+      }
+    }
+
+    &:last-child {
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      color: #7b8292;
+    }
+  }
+}
+// 定制化选择颜色按钮组
+
+.color-group {
+  .el-radio {
+    width: 20px;
+  }
+
+  .el-radio__label {
+    padding-left: 0;
+    position: absolute;
+    top: 27px;
+    left: -4px;
+  }
+  @mixin radio-color($color: #409EFF) {
+    .el-radio__inner {
+      border-color: $color;
+      background: $color;
+    }
+
+    &.is-checked {
+      .el-radio__inner::after {
+        opacity: 1;
+      }
+    }
+    // .el-radio__label {
+    //   color: $color;
+    // }
+  }
+  // let colors = {
+  //   blue: '#0a9af9',
+  //   gold: '#d4a660',
+  //   green: '#0da591',
+  //   orange: '#f8922f',
+  //   red: '#a3121a'
+  // }
+  .blue {
+    @include radio-color(#0a9af9);
+  }
+
+  .gold {
+    @include radio-color(#d4a660);
+  }
+
+  .green {
+    @include radio-color(#0da591);
+  }
+
+  .orange {
+    @include radio-color(#f8922f);
+  }
+
+  .red {
+    @include radio-color(#a3121a);
+  }
+
+  .el-radio__inner {
+    border-radius: 0;
+    height: 20px;
+    width: 20px;
+
+    &::after {
+      opacity: 0;
+      width: 8px;
+      height: 11px;
+      border-radius: 0;
+      border: 2px solid #fff;
+      box-sizing: border-box;
+      background-color: transparent;
+      border-top: 0;
+      border-left: 0;
+      top: 2px;
+      left: 5px;
+      transform: rotate(45deg) scaleY(1) !important;
+    }
+  }
+}

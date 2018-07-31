@@ -1,0 +1,257 @@
+// 针对 dialog 做响应式布局
+@media only screen and (min-width: 1200px) {
+  .el-dialog{
+    width: 45%;
+  }
+}
+@media only screen and (min-width: 1920px) {
+  .el-dialog{
+    width: 35%;
+  }
+}
+
+@mixin btn-gradient {
+  padding: 5px 20px;
+  line-height: 1.5;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 2px 5px rgb(168, 165, 165);
+
+  &:focus,
+  &:hover {
+    color: white;
+  }
+}
+@mixin pagination-span {
+  min-width: 34px;
+  height: 34px;
+  line-height: 34px;
+}
+@mixin pagination-li {
+  @include pagination-span;
+  border-radius: 4px;
+  box-sizing: border-box;
+  border: 1px solid #d1dbe5;
+}
+
+.el-pagination button,
+.el-pagination span {
+  @include pagination-span;
+}
+
+.btn-gradient-blue {
+  @include btn-gradient;
+  background: linear-gradient(rgba(82,192,250,1),rgba(63,102,245,1));
+
+  &:hover {
+    background: linear-gradient(rgba(82,192,250,.9),rgba(63,102,245,.9));
+  }
+}
+
+.btn-gradient-orange {
+  @include btn-gradient;
+  background: linear-gradient(rgba(239, 100, 57, 1), rgba(217, 61, 53, 1));
+
+  &:hover {
+    background: linear-gradient(rgba(239, 100, 57, .9), rgba(217, 61, 53, .9));
+  }
+}
+/*每个组件的标题 和搜索表单*/
+
+.header {
+  &-title {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  &-form {
+    margin-top: 15px;
+
+    .el-form-item {
+      margin-bottom: 12px;
+    }
+  }
+
+  &-statistics {
+    // 针对统计页面 title 下方一行样式
+    margin-top: 10px;
+  }
+}
+
+// 企视通 下拉菜单 gray 通用样式
+.custom-select {
+  // 选择框的箭头
+  .popper__arrow{
+    display: none;
+  }
+
+  // .el-select-dropdown__item {
+  //   height: 24px;
+  //   line-height: 24px;
+  // }
+  //
+  // .el-select-dropdown__item span {
+  //   line-height: 24px!important;
+  // }
+}
+
+// 所有表格 表头 黑色字体
+.el-table {
+  thead {
+    color: #474545;
+  }
+}
+/*10条数据表格通用部分样式*/
+
+.data-table {
+  min-height: 440px;
+}
+/* 分页插件样式*/
+
+.pager-pagination {
+  color: #48576a;
+  font-weight: 400;
+  margin-top: 8px;
+  float: right;
+
+  .btn-next,
+  .btn-prev,
+  .el-pagination__editor,
+  ul.el-pager > li {
+    @include pagination-li;
+  }
+
+  ul.el-pager > li {
+    margin: 0 2.5px;
+  }
+
+  .btn-prev {
+    margin-right: 2.5px;
+  }
+
+  .btn-next {
+    margin-left: 2.5px;
+  }
+
+  .el-pagination__editor {
+    border: none;
+  }
+
+  .el-pagination__sizes {
+    margin-top: 3px;
+  }
+
+  .el-pagination__total {
+    margin-top: 4px;
+  }
+  /*每页多少条数据 文字提示*/
+  .page-size-tip {
+    margin: 4px 10px 0 0;
+    font-weight: 400;
+    color: #5a5e66;
+  }
+
+  .el-pager li.active {
+    border-color: #20a0ff;
+    background-color: #20a0ff;
+    color: #fff;
+    cursor: default;
+  }
+}
+
+.main-box {
+  position: relative;
+  height: inherit;
+
+  .left {
+    position: fixed;
+    width: 180px;
+    height: 100%;
+    box-sizing: border-box;
+    z-index: 99;
+    background: white;
+    // 加上这个隐藏，内部子菜单滚动条消失
+    overflow: hidden;
+  }
+
+  .right {
+    position: absolute;
+    left: 180px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    box-sizing: border-box;
+    background: rgba(245,248,249,1);
+
+    &-header-container {
+      position: fixed;
+      width: 100%;
+      height: 50px;
+      box-sizing: border-box;
+      z-index: 99;
+    }
+  }
+
+  .content {
+    /* router-view*/
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
+    padding: 30px 20px 20px;
+    background: rgba(245,248,249,1);
+  }
+
+  .echart-box {
+    // 统计页面 echart
+    height: 300px;
+    margin-top: 20px;
+    background: white;
+
+    &-content {}
+
+    &-table {}
+  }
+  // 表格中 修改按钮 改用span
+  .alter-span {
+    color: #66b1ff;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+  // 修改element2 导致的表格高度问题
+  .el-table td,
+  .el-table th {
+    padding: 8px 0;
+  }
+}
+// 小手辅助
+
+.pointer {
+  cursor: pointer;
+}
+// 文字对齐方式辅助
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+// 悬浮文字变色
+
+.hover-red:hover {
+  color: red;
+}
+
+.hover-blue:hover {
+  color: #409eff;
+}

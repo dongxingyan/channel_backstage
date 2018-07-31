@@ -1,0 +1,80 @@
+.boxes {
+  @import '../enterprise';
+
+  .opera:last-child {
+    color: red;
+  }
+  // 全选和分配 容器
+  .check-all-container {
+    // 分配按钮
+    .dispatch-btn {
+      margin-left: 20px;
+    }
+  }
+  // 下载模板超链接
+  .upload-template {
+    bottom: 40px;
+    left: 10px;
+    position: relative;
+  }
+
+  .add-box-dialog {
+    .add-boxes-table {}
+  }
+  // Excel导入 dialog
+  .excel-import-dialog {
+    // 描述有效信息
+    .valid-info {
+      height: 44px;
+
+      span {
+        display: inline-block;
+        margin-left: 25%;
+        padding: 10px 20px;
+        width: 75%;
+      }
+    }
+
+    .import-file {
+      // padding: 20px 0 0;
+      margin-bottom: 10px;
+
+      .dialog-left-text {
+        line-height: 30px;
+      }
+    }
+
+    .import-descr {
+      &::before {
+        content: '';
+        position: relative;
+        // top: 30px;
+        width: 90%;
+        margin-left: 5%;
+        border-bottom: 1px solid #bfbfbf;
+      }
+
+      .dialog-left-text {
+        position: relative;
+        top: 7px;
+      }
+    }
+  }
+  // edit 编辑盒子Dialog
+  .edit-boxes-dialog {
+    .el-form-item__label {
+      font-weight: bold;
+    }
+  }
+  // 分配 dialog
+  .dispatch-boxes-dialog {
+    .el-dialog__body {
+      padding: 10px 40px 30px;
+    }
+
+    .gray-text {
+      margin-left: 10px;
+      line-height: 40px;
+    }
+  }
+}

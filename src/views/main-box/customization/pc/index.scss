@@ -1,0 +1,7 @@
+.customization-pc{
+  @import "../custom-form";
+
+  .forbid-click {
+    pointer-events: none;
+  }
+}

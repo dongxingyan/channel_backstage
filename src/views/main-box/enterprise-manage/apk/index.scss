@@ -1,0 +1,53 @@
+.apk {
+  @import "../enterprise";
+
+  .search-area {
+    right: 80px;
+  }
+  // 版本管理dialog
+  .version-manage-dialog {
+    .header {
+      border-bottom: 1px solid #bfbfbf;
+    }
+
+    .apk-name {
+      font-weight: bold;
+    }
+
+    .btn-upfile {
+      // float: right;
+      position: absolute;
+      right: 20px;
+    }
+
+    .pagination {
+      // background: rgb(238 , 238, 238);
+      display: flex;
+      justify-content: flex-end;
+
+      .el-pagination__total {
+        color: #2d2f33;
+        font-weight: 700;
+      }
+    }
+  }
+  // 上下线开关
+  .el-radio-button__inner {
+    padding: 3px 10px;
+  }
+  // 下线
+  .el-radio-button.off-line.is-active .el-radio-button__inner {
+    background-color: red;
+    border-color: red;
+    box-shadow: -1px 0 0 0 red;
+  }
+
+  .add-version-dialog,
+  .alter-version-dialog {
+    .btn-upfile {
+      position: absolute;
+      right: -105px;
+      top: 5px;
+    }
+  }
+}

@@ -1,0 +1,209 @@
+$color-green: #7bd082;
+$color-gray: #acbcc7;
+$color-black: #30383d;
+
+.home {
+  .container {
+    position: relative;
+    margin-top: 20px;
+    height: 160px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-box {
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+    flex: auto;
+    position: relative;
+    height: 160px;
+    // width: 24%;
+    padding: 0 20px;
+    margin: 0 10px;
+    box-sizing: border-box;
+    // border: 1px solid;
+    border-radius: 5px;
+    background: white;
+    // &-left{
+    // }
+    //
+    // &-middle{
+    //   left: 34%;
+    // }
+    //
+    // &-right{
+    //   left: 68%;
+    // }
+    &-header {
+      font-weight: bold;
+      color: #464545;
+      text-align: center;
+      line-height: 45px;
+      height: 45px;
+      font-size: 15px;
+      box-sizing: border-box;
+      border-bottom: 1px solid rgb(233, 238, 240);
+
+      & img {
+        // 客户数量图标和会议状态图标
+        position: relative;
+        margin-right: 8px;
+        top: 5px;
+      }
+    }
+
+    &-info-container {
+      position: absolute;
+      top: 45px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      box-sizing: border-box;
+      border-radius: 5px;
+    }
+
+    .download {
+      display: flex;
+      flex-wrap: wrap;
+      left: 20px;
+      right: 20px;
+
+      .android,
+      .ios,
+      .pc {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        >div:first-child{
+          // font-size: 16px;
+          font-weight: bold;
+        }
+
+        .no-config {
+          color: gray;
+        }
+      }
+      .img-div {
+        display: flex;
+        align-items: flex-start;
+        img {
+          margin-right: 3px;
+        }
+      }
+    }
+
+    &-info {
+      // 水平垂直居中的内容
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      text-align: center;
+      line-height: 2;
+      // font-size: 12px;
+      &.line-count {
+        // 针对18号字体的行高
+        line-height: 1.6;
+      }
+
+      &.meet-left {
+        // 会议状况左
+        width: 50%;
+      }
+
+      &.meet-right {
+        // 会议状况右边=
+        width: 50%;
+        left: 50%;
+        text-align: left;
+      }
+
+      .color-black {
+        color: $color-black;
+        font-weight: bold;
+      }
+
+      .color-green {
+        color: $color-green;
+        font-weight: bold;
+      }
+
+      .color-gray {
+        color: $color-gray;
+      }
+
+      .all-count {
+        font-size: 18px;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .echart-meeting {
+    margin-top: 15px;
+    height: 300px;
+    background: white;
+
+    #J-meeting-use {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .custom-table-container {
+    padding: 0 20px 20px;
+    margin-top: 20px;
+    background: #fff;
+    .table-title {
+      font-size: 14px;
+      color: #474545;
+      height: 50px;
+      line-height: 50px;
+      font-weight: bold;
+    }
+    .custom-table {
+      color: #68788c;
+      font-size: 12px !important;
+      border-top: 1px solid #ddd;
+      border-bottom: none;
+      padding-top: 15px;
+      td, th {
+        border-bottom: none;
+        .cell {
+          //color: #68788c;
+        }
+      }
+      thead th {
+        color: #68788c;
+      }
+      tbody td:first-child {
+        color: #42a8fb;
+        cursor: pointer;
+      }
+      .meeting-num {
+        color: #42a8fb;
+        cursor: pointer;
+      }
+    }
+    .no-data {
+      height: 200px;
+      line-height: 220px;
+      text-align: center;
+      font-size: 12px;
+      color: #9c9c9c;
+    }
+  }
+
+  .el-table--border::after, .el-table--group::after, .el-table::before {
+    content: '';
+    position: absolute;
+    background-color: #fff;
+    z-index: 1;
+  }
+}

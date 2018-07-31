@@ -1,0 +1,214 @@
+// 混合器，有效无效基本样式
+@mixin valid($back-color) {
+  display: inline-block;
+  padding: 0 10px;
+  border-radius: 14px;
+  line-height: 20px;
+  color: white;
+  background-color: $back-color;
+}
+// 有效样式
+
+.has-valid {
+  @include valid(rgb(0,153,68));
+}
+//无效样式
+
+.no-valid {
+  @include valid(rgb(181,181,181));
+}
+
+.header {
+  height: 50px;
+  position: relative;
+}
+// 隐藏上传文件区域
+
+input[type='file'] {
+  position: absolute;
+  display: none;
+  z-index: -1;
+}
+// 删除dialog
+
+.delete-boxes-dialog {
+  .delete-tip {
+    margin-top: 10px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+}
+// 表格 多选按钮
+
+.cell.all-select {
+  opacity: 0;
+  pointer-events: none;
+  display: none; // 替代 pointer-events: none;
+  // 堆叠顺序在后，点击不会触发该dom
+  z-index: -1;
+  // 兼容不支持 上方属性的浏览器,如ie10
+  .el-checkbox__inner {
+    cursor: default;
+  }
+}
+// 头部搜索区域
+
+.search-area {
+  position: absolute;
+  right: 50px;
+  top: 0;
+  bottom: 14px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  // input三者合一 整体容器
+  .input-area {
+    margin-right: 10px;
+    width: 330px;
+  }
+  // 将整体变矮
+  .el-input__inner {
+    height: 36px;
+  }
+  // input 中的 select 宽度
+  .el-select .el-input {
+    width: 118px;
+  }
+
+  .el-input-group__prepend {
+    background-color: white;
+  }
+
+  .el-input-group__append {
+    background-color: #fff;
+    padding: 0;
+    // 搜索图片按钮区域按钮
+    .el-button {
+      cursor: default;
+      display: flex;
+    }
+  }
+
+  .serach-img {
+    // position: relative;
+    // top: 6px;
+    // height: 32px;
+    // width: 40px;
+    // cursor: pointer;
+    position: relative;
+    top: 1px;
+    height: 32px;
+    width: 40px;
+    cursor: pointer;
+  }
+}
+// table 增加左右padding
+
+.enterprise-table {}
+// 全选容器，分页左部
+
+.check-all-container {
+  background-color: white;
+  margin-top: 8px;
+  // 全选按钮区域
+  .check-all {
+    margin-left: 14px;
+    margin-right: 20px;
+
+    .el-checkbox__label {
+      margin-left: 5px;
+    }
+  }
+  // 删除按钮
+  .delete-btn {
+    color: red;
+    margin-left: 20px;
+
+    img {
+      position: relative;
+      top: 2px;
+    }
+  }
+}
+// 操作
+
+.opera {
+  display: inline-block;
+  padding: 0 8px;
+  border-right: 1px solid #e6ebf5;
+  cursor: pointer;
+  color: #409EFF;
+
+  &:first-child {
+    padding-left: 0;
+  }
+
+  &:last-child {
+    padding-right: 0;
+    border: 0;
+  }
+
+  img {
+    position: relative;
+    top: 2px;
+  }
+}
+// 表格中最后一行的 + 号样式
+
+.tfoot-add {
+  padding: 10px;
+  text-align: center;
+}
+// 表格中 带红色*号的 表头
+
+.first-letter-red.cell::before {
+  content: '*';
+  color: red;
+}
+//针对所有dialog调整
+
+.el-dialog {
+  .el-dialog__title {
+    font-size: 16px;
+  }
+
+  .el-form-item__label {
+    font-weight: bold;
+  }
+}
+
+.el-dialog__body {
+  border-top: 1px solid #e6ebf5;
+  // dialog 内部 el-select
+  .el-select {
+    width: 100%;
+  }
+}
+
+.dialog-left-text {
+  text-align: right;
+  line-height: 40px;
+  color: gray;
+}
+
+.btn-upfile {
+  padding: 7px 15px;
+  border-radius: 18px;
+  border-color: #3a92f1;
+  color: #3a92f1;
+  background-color: white;
+
+  &:hover {
+    background: #409EFF;
+    border-color: #409EFF;
+    color: #fff;
+  }
+}
+
+.btn-area {
+  text-align: center;
+}
+
+.bold {
+  font-weight: 600;
+}

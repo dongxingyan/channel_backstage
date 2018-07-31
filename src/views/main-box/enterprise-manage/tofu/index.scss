@@ -1,0 +1,11 @@
+.tofu {
+  @import '../enterprise';
+
+  .add-edit-dialog {
+    .btn-upfile {
+      bottom: 70px;
+      left: 90px;
+      position: absolute;
+    }
+  }
+}

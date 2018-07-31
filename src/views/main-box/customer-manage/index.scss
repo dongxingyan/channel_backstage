@@ -1,0 +1,17 @@
+.customer-manage {
+    .header {
+        position: relative;
+    }
+    .create-btn {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .no-pass-tip {
+        position: absolute;
+        top: 13px;
+        line-height: 1;
+        width: 180px;
+        right: -190px;
+    }
+}
